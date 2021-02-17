@@ -1,5 +1,28 @@
 import styled from "styled-components";
 import Menu from "../src/components/Menu";
+import BtnLogin from "../src/components/Buttons/BtnLogin";
+import BtnSignUp from "../src/components/Buttons/BtnSignUp";
+import { useRouter } from "next/router";
+
+/*
+Framer Motion 
+https://www.framer.com/api/motion#quick-start
+
+<elemento
+  as = {motion.div}
+        // delay: tempo após a renderização  / duration: duração da animação
+        transition = {{ delay: 0.2, duration: 0.5 }}
+        variants = {{
+          // Estados da animação
+          hidden: { opacity: 0 , y: "100%" },
+          show: { opacity: 1 , y: 0},
+        }}
+        initial = "hidden"
+        animate = "show"      
+>
+</elemento>
+
+*/
 
 const Title = styled.h1`
   font-size: 50px;
@@ -7,46 +30,22 @@ const Title = styled.h1`
 `;
 
 export default function Home() {
-  // itens é um array de objetos que contém o nome do item e o caminho
-
+  const router = useRouter();
   return (
     <>
       <Menu
         itens={[
-          { nome: "Product", path: "#" },
+          { nome: "Product", path: "/" },
           { nome: "Pricing", path: "#" },
           { nome: "Sucess Stories", path: "#" },
-          { nome: "Services", path: "#" },
-          { nome: "About Us", path: "#" },
+          { nome: "Services", path: "/services" },
+          { nome: "About Us", path: "/about" },
           { nome: "Resources", path: "#" },
         ]}
-        disp="inline-block" // Define disposição do menu
+        disp="inline-block" // Define disposição do menu (Block, Inline-block ou Inline)
       />
-      <button
-        style={{
-          padding: "12px 16px",
-          border: "solid black 2px",
-          borderRadius: ".5rem",
-          fontFamily: "Arial",
-          fontWeight: "bolder",
-        }}
-      >
-        Log In
-      </button>
-      <button
-        style={{
-          color: "white",
-          backgroundColor: "black",
-          marginLeft: "20px",
-          padding: "12px 30px",
-          border: "solid black 2px",
-          borderRadius: ".5rem",
-          fontFamily: "Arial",
-          fontWeight: "bolder",
-        }}
-      >
-        Create a free account
-      </button>
+      <BtnLogin onClick={() => router.push("/login")}>Log In</BtnLogin>
+      <BtnSignUp>Create a free account</BtnSignUp>
     </>
   );
 }

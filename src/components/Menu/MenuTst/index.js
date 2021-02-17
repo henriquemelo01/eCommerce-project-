@@ -9,15 +9,18 @@ const MenuNav = styled.nav`
   font-weight: bolder;
   background-color: white;
   color: black;
-  display: inline-block;
-  margin: 30px 120px 30px 120px;
+  margin: 30px 0 30px 120px;
+  /* margin: 30px 0 30px 120px; */
 
   ul {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
   }
 
   li {
-    display: inline-block;
     margin-left: 25px;
+    list-style: none; // tirar bolinha da lista
   }
 
   a {
@@ -36,10 +39,10 @@ const MenuNav = styled.nav`
   }
 `;
 
-export default function Menu({ itens, disp }) {
+export default function MenuTst({ itens }) {
   return (
     <>
-      <MenuNav style={{ display: disp }}>
+      <MenuNav>
         <ul>
           {itens.map((item, i) => (
             <li key={`lista--${i}`}>

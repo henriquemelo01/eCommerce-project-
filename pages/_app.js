@@ -3,13 +3,11 @@ import Head from "next/head";
 
 const GlobalStyle = createGlobalStyle`
   * {
-    box-sizing: border-box;
-  }
-  body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
   }
+
 `;
 
 const theme = {
