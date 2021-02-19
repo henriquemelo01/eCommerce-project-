@@ -8,12 +8,13 @@ const InputBase = styled.input`
   height: 35px;
   margin-bottom: 5px;
   border-radius: 0.6rem;
+  text-indent: 10px;
+
   ::placeholder {
     color: black;
-    text-indent: 10px;
   }
   /* Retira seleção do input  */
-  :focus {
+  &:focus {
     box-shadow: 0 0 0 0;
     outline: 0;
   }

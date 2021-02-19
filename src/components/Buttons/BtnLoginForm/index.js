@@ -9,13 +9,15 @@ const BtnLoginForm = styled.button`
   border: white 1px solid;
   border-radius: 0.6rem;
   color: white;
-  background-color: black;
-  opacity: 0.8;
+  background-color: #e0e0e0;
+  color: black;
+  font-weight: bold;
   :focus,
   :hover {
     box-shadow: 0 0 0 0;
     outline: 0;
-    opacity: 1;
+    background-color: #1a237e;
+    color: white;
   }
 `;
 

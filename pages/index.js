@@ -26,7 +26,8 @@ https://www.framer.com/api/motion#quick-start
 
 const Title = styled.h1`
   font-size: 50px;
-  color: ${({ theme }) => theme.colors.primary};
+  color: ${({ theme }) =>
+    theme.colors.primary}; // Todo componente possui a propriedade props.theme
 `;
 
 export default function Home() {

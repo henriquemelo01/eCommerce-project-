@@ -7,6 +7,10 @@ const BtnLogin = styled.button`
   border-radius: 0.5rem;
   font-family: Arial;
   font-weight: bolder;
+  &:focus {
+    box-shadow: 0 0 0 0;
+    outline: 0;
+  }
 `;
 
 export default BtnLogin;

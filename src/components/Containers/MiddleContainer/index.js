@@ -10,12 +10,22 @@ const FakeBody = styled.div`
   height: 100vh;
   align-items: center;
   background-color: black;
+  font-family: "Roboto", sans-serif;
+  font-weight: normal;
+
+  h1 {
+    font-size: 24px;
+  }
+
+  p {
+    font-size: 12px;
+  }
 
   form {
-    background-color: #ebeaf5;
+    background: linear-gradient(#ebeaf5, #9e9e9e);
     width: 300px;
     padding: 20px;
-    height: 50vh;
+    height: 48vh;
     border: solid white 1px;
     border-radius: 2rem;
   }
@@ -25,34 +35,47 @@ export default function MiddleContainer({ children }) {
   return (
     <>
       <FakeBody>
-        <form>
-          <h1>Log In</h1>
-          <hr
-            style={{
-              width: "100%",
-              border: "1px solid white",
-              margin: "15px 0",
-              size: "10px",
-            }}
-          />
-          <Input01 type="text" placeholder="E-mail" />
-          <Input01 type="password" placeholder="Password" />
-          <p style={{ margin: "5px 0 15px 0", textAlign: "center" }}>
-            <a href="#">Forgot your password ?</a>
-          </p>
-          <BtnLoginForm>Log In</BtnLoginForm>
-          <hr
-            style={{
-              margin: "15px 0",
-              width: "100%",
-              border: "1px solid white",
-              size: "10px",
-            }}
-          />
-          <p style={{ margin: "5px 0 15px 0", textAlign: "center" }}>
-            <a href="#">Already have an account ? Sign Up</a>
-          </p>
-        </form>
+        <motion.div
+          transition={{ delay: 0.2, duration: 0.5 }}
+          variants={{
+            // Estados da animação
+            hidden: { opacity: 0, y: "-100%" },
+            show: { opacity: 1, y: 0 },
+          }}
+          initial="hidden"
+          animate="show"
+        >
+          <form>
+            <h1>Log In</h1>
+            <hr
+              style={{
+                width: "100%",
+                border: "1px solid white",
+                margin: "15px 0",
+                size: "10px",
+              }}
+            />
+            <Input01 type="text" name="email" placeholder="E-mail" />
+            <Input01 type="password" placeholder="Password" />
+            <p style={{ margin: "5px 0 15px 0", textAlign: "center" }}>
+              <a href="#">Forgot your password ?</a>
+            </p>
+            <BtnLoginForm onClick={(e) => e.preventDefault()}>
+              Log In
+            </BtnLoginForm>
+            <hr
+              style={{
+                margin: "15px 0",
+                width: "100%",
+                border: "1px solid white",
+                size: "10px",
+              }}
+            />
+            <p style={{ margin: "5px 0 15px 0", textAlign: "center" }}>
+              <a href="#">Already have an account ? Sign Up</a>
+            </p>
+          </form>
+        </motion.div>
       </FakeBody>
     </>
   );
