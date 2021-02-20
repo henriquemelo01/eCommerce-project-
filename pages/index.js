@@ -4,26 +4,6 @@ import BtnLogin from "../src/components/Buttons/BtnLogin";
 import BtnSignUp from "../src/components/Buttons/BtnSignUp";
 import { useRouter } from "next/router";
 
-/*
-Framer Motion 
-https://www.framer.com/api/motion#quick-start
-
-<elemento
-  as = {motion.div}
-        // delay: tempo após a renderização  / duration: duração da animação
-        transition = {{ delay: 0.2, duration: 0.5 }}
-        variants = {{
-          // Estados da animação
-          hidden: { opacity: 0 , y: "100%" },
-          show: { opacity: 1 , y: 0},
-        }}
-        initial = "hidden"
-        animate = "show"      
->
-</elemento>
-
-*/
-
 const Title = styled.h1`
   font-size: 50px;
   color: ${({ theme }) =>

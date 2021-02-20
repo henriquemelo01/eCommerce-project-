@@ -9,7 +9,7 @@ const MiddleContainer = styled.div`
 `;
 
 MiddleContainer.Content = styled.div`
-  height: 52%;
+  height: 46%;
   width: 340px;
   padding: 20px;
   border: solid white 1px;
