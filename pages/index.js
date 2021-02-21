@@ -26,7 +26,9 @@ export default function Home() {
         disp="inline-block" // Define disposição do menu (Block, Inline-block ou Inline)
       />
       <BtnLogin onClick={() => router.push("/login")}>Log In</BtnLogin>
-      <BtnSignUp>Create a free account</BtnSignUp>
+      <BtnSignUp onClick={() => router.push("/testepage")}>
+        Create a free account
+      </BtnSignUp>
     </>
   );
 }

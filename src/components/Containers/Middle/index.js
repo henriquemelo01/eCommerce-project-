@@ -9,18 +9,22 @@ const MiddleContainer = styled.div`
 `;
 
 MiddleContainer.Content = styled.div`
-  height: 46%;
-  width: 340px;
+  height: ${(props) => props.height || "50 %"};
+  width: ${(props) => props.width || "340px"};
   padding: 20px;
   border: solid white 1px;
   border-radius: 1.5rem;
   background: ${(props) => props.background || "white"};
 `;
 
-export default function Middle({ children, background }) {
+export default function Middle({ children, background, height, width }) {
   return (
     <MiddleContainer>
-      <MiddleContainer.Content background={background}>
+      <MiddleContainer.Content
+        background={background}
+        height={height}
+        width={width}
+      >
         {children}
       </MiddleContainer.Content>
     </MiddleContainer>

@@ -86,26 +86,43 @@ export default function LoginPage() {
         initial="hidden"
         animate="show"
       >
-        <MiddleContainer background="white" as={motion.div}>
+        <MiddleContainer height="60%" background="white" as={motion.div}>
           <form>
             <div className="form-header">
-              <h1>Log In</h1>
+              <h1>Sign Up</h1>
               <AiOutlineCloseCircle
                 className="icon"
                 onClick={() => router.push("/")}
               />
             </div>
             <hr />
+            <InputLogin
+              style={{ marginBottom: "10px" }}
+              type="name"
+              name="email"
+              placeholder="Nome Completo"
+            />
             <InputLogin type="text" name="email" placeholder="E-mail" />
-            <InputLogin type="password" placeholder="Password" />
-            <p>
-              <a href="#">Forgot your password ?</a>
-            </p>
-            <BtnLoginForm> Login</BtnLoginForm>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                marginTop: "20px",
+                marginBottom: "10px",
+              }}
+            >
+              <InputLogin width="48%" type="password" placeholder="Password" />
+              <InputLogin
+                width="48%"
+                type="password"
+                placeholder="Confirmar Password"
+              />
+            </div>
+            <BtnLoginForm> Sign Up</BtnLoginForm>
             <hr />
             <p className="already">
-              <Link href="signup">
-                <a>Already have an account ? Sign Up</a>
+              <Link href="login">
+                <a>Faça Login em vez disso</a>
               </Link>
             </p>
           </form>
